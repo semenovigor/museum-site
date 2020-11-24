@@ -1,0 +1,25 @@
+.text-reviews-big {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.125em;
+    line-height: 1.25em;
+    letter-spacing: 0.44em;
+
+    color: #F7E4C3;
+}
+
+.text-reviews-small {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.75em;
+    line-height: 1.25em;
+    letter-spacing: 0.11em;
+
+    color: #F7E4C3;
+}
+
+.background-review{
+    background: #6B6B6B;
+}

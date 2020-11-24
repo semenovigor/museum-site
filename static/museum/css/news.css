@@ -1,0 +1,47 @@
+.text-title {
+    font-family: 'Palatino Linotype', 'Book Antiqua3', Palatino6, serif;
+    font-size: 1.5em;
+    background: #6B6B6B;
+    border-radius: 8px;
+    color: #EFC987;
+}
+
+.background-news {
+    background: rgb(196, 196, 196);
+    background: linear-gradient(90deg, rgba(196, 196, 196, 1) 0%, rgba(247, 228, 195, 1) 50%, rgba(196, 196, 196, 1) 100%);
+
+}
+
+.category-line {
+    height: 8vh;
+    background: black;
+    border-radius: 8px;
+}
+
+.text-category-news {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.875em;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.15em;
+
+    color: #EFC987;
+}
+
+.text-date-news {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.875em;
+    line-height: 0.5em;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.15em;
+
+    color: whitesmoke;
+    text-shadow: #EFC987;
+}
+

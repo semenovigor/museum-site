@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}Выпускники{% endblock %}
+
+{% block content %}
+    <div class="container-fluid ">
+        <div class="marginLineNew d-flex justify-content-center align-items-center ">
+            <div class="museumWordBlack">
+                Выпускники
+            </div>
+        </div>
+    </div>
+    <section class="container-fluid">
+        {% for el in graduates %}
+            <div class="card-body background-news">
+                <div class="card-title text-center ">
+                    <div class="d-flex justify-content-start pl-3 text-muted text-footer pt-2 pb-3">Дата
+                        публикации: {{ el.date }}</div>
+                    <div class="text-title py-3">{{ el.title }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="carousel slide d-block w-100" id="_i{{ el.id }}" data-ride="carousel">
+                            <ol class="carousel-indicators ">
+                                {% for im in el.newimage_set.all %}
+                                    {% if forloop.first %}
+                                        <li data-target="#_i{{ el.id }}" data-slide-to="{{ forloop.counter0 }}"
+                                            class="active bg-warning"></li>
+                                    {% else %}
+                                        <li data-target="#_i{{ el.id }}" data-slide-to="{{ forloop.counter0 }}"
+                                            class="bg-warning"></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                {% for im in el.newimage_set.all %}
+                                    {% if forloop.first %}
+                                        <div class="carousel-item active"> {% if im.image %}
+                                            <img class="d-block text-center w-100 h-25" src='{{ im.image.url }}'
+                                                 alt="Image">
+                                        {% endif %}</div>
+                                    {% else %}
+                                        <div class="carousel-item"> {% if im.image %}
+                                            <img class="d-block text-center w-100 h-25" src='{{ im.image.url }}'
+                                                 alt="Image">
+                                        {% endif %}</div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+
+                            <a class="carousel-control-prev" href="#_i{{ el.id }}" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#_i{{ el.id }}" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 shadow bg-white">
+                        <div class="card-text">{{ el.text|safe }}</div>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <div class="d-flex justify-content-end align-items-center ">
+                        <div class="text-footer pr-4">
+                            Kатегория: {{ el.category }} <i class="fas fa-circle ba"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+        {% include 'include/pagination.html' %}
+
+    </section>
+
+{% endblock %}

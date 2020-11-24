@@ -1,0 +1,606 @@
+body {
+    font-size: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    height: 20%;
+
+}
+
+.backgroundLine {
+    background-color: black;
+    height: 1.5vh;
+}
+
+.background-line-white {
+    background-color: white;
+    height: 1.5vh;
+}
+
+.backgroundMuseumPhotoText {
+    background: #6B6B6B;
+    min-height: 20%;
+}
+
+.museumWord {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #EFC987;
+}
+
+.museumWord-White {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: white;
+}
+
+.museumWordBlack {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+
+    color: black;
+}
+
+.museumWordBlack2 {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1em;
+    letter-spacing: 0.39em;
+    line-height: 1.0625em;
+
+    color: #000000;
+}
+
+.museumWordBlack3 {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.1875em;
+    letter-spacing: 0.2em;
+    line-height: 1.3125em;
+
+    color: #000000;
+}
+
+.backgroundButton {
+    background: #EFC987;
+    border-radius: 5px;
+}
+
+
+.headerMainWord {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.1875em;
+    text-align: center;
+    letter-spacing: 0.15em;
+
+    color: #000000;
+}
+
+.text-down-category {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.75em;
+    text-align: justify;
+    color: #000000;
+
+}
+
+.dateNew {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.125em;
+    text-align: center;
+
+    color: #EFC987;
+}
+
+.monthNew {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1875em;
+    letter-spacing: 0.4em;
+    line-height: 1.3125em;
+
+    color: #000000;
+}
+
+.yearNew {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1em;
+    letter-spacing: 0.39em;
+    line-height: 1.0625em;
+
+    color: #000000;
+}
+
+.textNearDateNew {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.75em;
+    line-height: 1em;
+    text-align: justify;
+    color: #000000;
+}
+
+.dateNew:hover, .monthNew:hover, .yearNew:hover {
+    color: white;
+    transition: 0.75s
+}
+
+.buttonHover:hover, .buttonHover:focus, .buttonHover:active {
+    background-color: #737373;
+    transition: 0.75s;
+}
+
+.buttonHover-1:hover, .buttonHover-1:focus, .buttonHover-1:active {
+    background-color: #EFC987;
+    transition: 0.75s;
+}
+
+.searchButton {
+    background: #EFC987;
+    border-radius: 0 5px 5px 0;
+    width: 75px;
+    height: 38px;
+    border: none;
+}
+
+.searchBorder {
+    border: 2px solid #EFC987;
+    box-sizing: border-box;
+    border-radius: 5px 0 0 5px;
+    height: 38px;
+    width: 185px;
+}
+
+.width-20 {
+    background-color: white;
+    width: 20%;
+}
+
+@media (max-width: 625px) {
+    .museumWord {
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.2em;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        color: #EFC987;
+    }
+
+    .museumWordBlack {
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.2em;
+        letter-spacing: 0.05em;
+        line-height: 0.875em;
+        color: black;
+    }
+
+    .museumWordBlack2 {
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 0.8em;
+        letter-spacing: 0.2em;
+        line-height: 0.875em;
+        color: #000000;
+    }
+}
+
+@media (max-width: 445px) {
+    .museumWord {
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1em;
+        letter-spacing: 0.03em;
+        text-decoration: none;
+
+        color: #EFC987;
+    }
+
+    .museumWordBlack {
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1em;
+        letter-spacing: 0.03em;
+        line-height: 0.625em;
+        color: black;
+    }
+
+    .museumWordBlack2 {
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 0.6em;
+        letter-spacing: 0.15em;
+        line-height: 1.1em;
+
+        color: #000000;
+    }
+
+    .searchButton {
+        background: #EFC987;
+        border-radius: 0 5px 5px 0;
+        width: 65px;
+        height: 30px;
+        border: none;
+    }
+
+    .searchBorder {
+        border: 2px solid #EFC987;
+        box-sizing: border-box;
+        border-radius: 5px 0 0 5px;
+        height: 30px;
+        width: 160px;
+    }
+}
+
+
+.hoverWord:hover {
+    background: #F7E4C3;
+    transition: 0.75s;
+    height: 200%;
+    border-radius: 5px;
+
+}
+
+.textNearMuseumPhoto {
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 150;
+    font-size: 0.875em;
+    line-height: 1.125em;
+    letter-spacing: 0.14em;
+
+    color: #FFFFFF;
+}
+
+.textNearMuseumPhotoB {
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.875em;
+    line-height: 1.125em;
+    letter-spacing: 0.14em;
+
+    color: #FFFFFF;
+}
+
+.textNearMuseumPhotoС {
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.1875em;
+    text-align: justify;
+    letter-spacing: 0.1em;
+
+    color: #FFFFFF;
+
+}
+
+.marginLine {
+    height: 16vh;
+    background: white;
+}
+
+.marginLine-review {
+    height: 12vh;
+    background: #F7E4C3;
+}
+
+.marginLineDown {
+    height: 8vh;
+    background: white;
+}
+
+.marginLineNew {
+    height: 16vh;
+    background: #EFC987;
+}
+
+.textCenter {
+
+    align-items: center;
+}
+
+.BlackLine {
+    height: 8vh;
+    background: black;
+}
+
+.circlePhoto {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.containerBackground {
+    border-radius: 5px;
+}
+
+.img-wrap {
+    position: relative;
+
+}
+
+.word-down-category {
+
+    position: absolute;
+    bottom: -1px;
+    width: 50%;
+    min-height: 25%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+    background-color: white;
+
+}
+
+.fontCategoryMuseum {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.125em;
+    line-height: 1.375;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.2em;
+
+    color: #000000;
+}
+
+.footer {
+    height: 60vh;
+}
+
+
+.moreNew {
+    position: absolute;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.1875em;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.16em;
+
+    color: #FFFFFF;
+}
+
+.backgroundNew {
+    background-color: #EFC987;
+    text-align: center;
+}
+
+.backgroundSlider {
+    background-color: #737373;
+}
+
+.textNew {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875em;
+    line-height: 1em;
+    letter-spacing: 0.1em;
+    text-align: justify;
+    color: #000000;
+}
+
+.headerCollapse {
+    background-color: #C4C4C4;
+}
+
+.footerSizeWhite {
+    background-color: white;
+    min-height: 40%;
+}
+
+.footerSizeGrey {
+    background-color: #C4C4C4;
+    min-height: 20%;
+}
+
+.backgroundLine-2 {
+    background-color: #EFC987;
+    height: 2vh;
+}
+
+.circle-on-footer {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    color: white;
+    background-color: white;
+}
+
+.btn-footer {
+    background-color: #F7E4C3;
+    border: none;
+
+    height: 30%;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.125em;
+    text-align: center;
+    letter-spacing: 1em;
+
+    color: #6B6B6B;
+}
+
+.imgFooter {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+}
+
+.mini-line-1 {
+
+    height: 5px;
+    border-radius: 5px;
+    background-color: #EFC987;
+    color: #EFC987;
+}
+
+.mini-line-2 {
+
+    height: 5px;
+    border-radius: 5px;
+    background-color: #6B6B6B;
+    color: #6B6B6B;
+}
+
+.rectangle-footer {
+    height: 50px;
+    width: 50px;
+}
+
+.text-footer {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.875em;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.15em;
+
+    color: #000000;
+}
+
+.text-footer:hover {
+    color: black;
+}
+
+.textNearMuseumPhotoС:hover {
+    color: #EFC987;
+}
+
+.text-footer-white {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.875em;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.15em;
+    background-color: #6B6B6B;
+    border-radius: 5px;
+    text-decoration: black;
+
+    color: white;
+}
+
+.text-footer-white:hover {
+    color: white;
+}
+
+.i-fontsize-gray {
+    background-color: #6B6B6B;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+
+
+}
+
+.i-fontsize-yellow {
+    background-color: #EFC987;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+
+}
+
+.line-height {
+    line-height: 1.5;
+}
+
+.number-phone {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.75em;
+    text-align: right;
+    letter-spacing: 0.12em;
+
+    color: #000000;
+}
+
+.text-footer-2 {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.1875em;
+    /* identical to box height */
+
+    text-align: right;
+    letter-spacing: 0.6em;
+
+    color: #000000;
+}
+
+.word-down-category:hover {
+    background-color: #EFC987;
+    transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+
