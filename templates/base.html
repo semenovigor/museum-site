@@ -1,0 +1,189 @@
+{% load static %}
+{% load watermark %}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/indexAndBase.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/reviews.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/news.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/pagination.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/calendar.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="backgroundLine"></div>
+</div>
+<header class="container-fluid">
+    <nav class="navbar navbar-white bg-white header">
+
+        <div class="navbar-brand ml-4">
+            <div class="museumWord"><a class="museumWord" href="{% url 'main' %}"> Музей </a> <b
+                    class="museumWordBlack">истории
+                развития</b></div>
+            <div class="w-100 museumWordBlack2">Гродненского государственного</div>
+            <div class="w-100 museumWordBlack2"> университета им. Янки Купалы</div>
+        </div>
+        <div class="btn-lg  h-100 text-center">
+            <a class="btn-lg headerMainWord buttonHover-1 h-100" href="{% url 'main' %}">
+                Главная
+            </a>
+        </div>
+        <div class="btn-lg h-100 text-center">
+            <button class="navbar-toggler headerMainWord buttonHover-1 h-100" type="button" data-toggle="collapse"
+                    data-target="#main" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation" name="top">
+                Музей
+            </button>
+        </div>
+        <div class="btn-lg h-100 text-center">
+            <a class="btn-lg headerMainWord buttonHover-1 h-100" href="{% url 'afisha' %}">
+                Афиша
+            </a>
+        </div>
+        <form class="form-inline ">
+            <input class="searchBorder" type="search" placeholder="Поиск" aria-label="Search">
+            <button class="searchButton" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+    <div class="collapse text-center" id="main">
+        <div class="headerCollapse w-100">
+
+            <div class="text-center pt-2">
+                <a href="{% url 'news' %}"><i class="far fa-play-circle"></i>Вести Музея</a>
+            </div>
+
+            <div class="text-center pt-2">
+                <a href="{% url 'museumNal' %}"><i class="far fa-play-circle"></i>Музей Зофьи Налковской</a>
+            </div>
+
+            <div class="text-center pt-2">
+                <a href=""><i class="far fa-play-circle">Виртуальный музей</i></a>
+            </div>
+
+             <div class="text-center pt-2">
+                <a href="{% url 'guests' %}"><i class="far fa-play-circle">Почётны гости Музея</i></a>
+            </div>
+
+        </div>
+    </div>
+</header>
+<div class="container-fluid">
+    <div class="backgroundLine"></div>
+</div>
+{% block content %}{% endblock %}
+
+<div class="container-fluid">
+    <div class="footer">
+        <div style="position:relative;overflow:hidden; height: 100%;"><a
+                href="https://yandex.by/maps/org/grodnenskiy_gosudarstvenny_universitet_imeni_yanki_kupaly/1038749843/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:0px;">Гродненский Государственный университет
+            имени Янки Купалы</a><a
+                href="https://yandex.by/maps/10274/grodno/category/university_college/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:14px;">ВУЗ в Гродно</a>
+            <iframe src="https://yandex.by/map-widget/v1/-/CCUAmLbH9D" width="100%" height="100%" frameborder="1"
+                    allowfullscreen="true" style="position:relative;"></iframe>
+        </div>
+    </div>
+
+
+</div>
+
+<footer class="container-fluid">
+    <div>
+        <div class="footerSizeWhite">
+            <div class="row d-flex align-content-center justify-content-around h-100">
+                <div class="my-5">
+                    <p>
+                    <h1 class="text-center "><i class="fas fa-map-marker-alt i-fontsize-yellow line-height"></i>
+                    </h1></p>
+                    <p class="text-footer">Наш адрес:</p>
+                    <div class="w-100 mini-line-1"></div>
+                    <p class="text-footer">230023, РБ, г. Гродно,</p>
+                    <p class="text-footer">ул. Ожешко, 22, 214 ауд.</p>
+                </div>
+                <div class="my-5">
+                    <p>
+                    <h1 class="text-center"><i class="far fa-clock i-fontsize-gray line-height"></i></h1></p>
+                    <p class="text-footer">Время работы:</p>
+                    <div class="w-100 mini-line-2"></div>
+                    <p class="text-footer">с 08.30 до 17.00,</p>
+                    <p class="text-footer">кроме выходных.</p>
+                </div>
+                <div>
+                    <div class="mb-5 my-5">
+                        <ul>
+                            <li class="text-footer"><a href="">Краткая история музея</a></li>
+                            <li class="text-footer"><a href="">Контакты</a></li>
+                            <li class="text-footer"><a href="">Старая версия сайт</a></li>
+                        </ul>
+                    </div>
+                    <div class="w-100"></div>
+                    <div>
+                        <a href="{% url 'reviews' %}" class="btn-lg mt-5 text-footer-white"> Оставить отзыв </a>
+                    </div>
+                </div>
+                <div class="my-5">
+                    <div>
+                        <p class="number-phone"> 8 (0152) 73 19 29</p>
+
+                        <div class="mini-line-1 w-100"></div>
+                        <p class="text-decoration-none text-footer-2"> museum@grsu.by </p>
+                    </div>
+                    <div class="row d-flex justify-content-around align-content-center">
+                        <div class="col " href=""><h1><i class="fab fa-vk text-warning "></i></h1></div>
+                        <div class="col "><h1><i class="fab fa-facebook-f text-warning"></i></h1></div>
+                        <div class="col "><h1><i class="fab fa-twitter text-warning"></i></h1></div>
+                        <div class="col "><h1><i class="fab fa-viber text-warning"></i></h1></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="backgroundLine-2"></div>
+        <div class="footerSizeGrey d-flex justify-content-around align-content-center">
+            <div class="navbar-brand align-self-center w-25 my-5 ">
+                <div class="museumWord"><b class="museumWord-White text-decoration-none"> Музей </b> <b
+                        class="museumWordBlack">истории
+                    развития</b></div>
+                <div class="w-100 museumWordBlack2">Гродненского государственного</div>
+                <div class="w-100 museumWordBlack2"> университета им. Янки Купалы</div>
+            </div>
+
+            <div class="d-flex align-self-end w-25">
+                <a class="btn-lg btn-footer text-decoration-none" href="#top">
+                    <i class="fas fa-arrow-alt-circle-up"></i>Вверх
+                </a>
+            </div>
+            <div class="row d-flex justify-content-around align-content-center w-25 my-5">
+                <div class="  circle-on-footer"><img class="imgFooter"
+                                                     src="{% static 'static/museum/img/GRSU-img-1.png' %}" alt="grsu">
+                </div>
+                <div class="  circle-on-footer"><img class="imgFooter"
+                                                     src="{% static 'static/museum/img/GRSU-img-2.png' %}" alt="grsu">
+                </div>
+                <div class="  circle-on-footer"><img class="imgFooter"
+                                                     src="{% static 'static/museum/img/GRSU-img-3.png' %}" alt="grsu">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
