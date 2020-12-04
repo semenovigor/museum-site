@@ -162,12 +162,16 @@ a:hover {
 .buttonHover:hover, .buttonHover:focus, .buttonHover:active {
     background-color: #737373;
     transition: 0.75s;
+    box-shadow: none !important;
 }
 
 .buttonHover-1:hover, .buttonHover-1:focus, .buttonHover-1:active {
     background-color: #EFC987;
     transition: 0.75s;
+    box-shadow: none !important;
 }
+
+
 
 .searchButton {
     background: #EFC987;
@@ -595,6 +599,7 @@ a:hover {
     background-color: #EFC987;
     transition: 0.5s;
 }
+
 
 
 

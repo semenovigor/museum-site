@@ -1,15 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}
-Calendar
-{% endblock %}
+{% block title %}Календарь{% endblock %}
 
 {% block content %}
-<div class="clearfix">
-	<a class="btn btn-info left" href="{% url 'cal:calendar' %}?{{ prev_month }}"> Previous Month </a>
-	<a class="btn btn-info right" href="{% url 'cal:calendar' %}?{{ next_month }}"> Next Month </a>
-	<a class="btn btn-info right" href="{% url 'cal:event_new' %}"> New Event </a>
-</div>
-
-{{ calendar }}
+    <section class="container-fluid">
+        <div class="background-calendar">
+            <div class="col">
+                <div class="row">
+                    <div class="col d-flex justify-content-start pl-5 pt-4">
+                        <a class="btn  text-button-calendar"
+                           href="{% url 'calendar' %}?{{ prev_month }}"><h1 class="iframe"><i class="fas fa-arrow-circle-left"></i></h1></a>
+                        <a class="btn  text-button-calendar ml-4"
+                           href="{% url 'calendar' %}?{{ next_month }}"><h1 class="iframe"><i class="fas fa-arrow-circle-right"></i></h1></a>
+                    </div>
+                </div>
+                <div>
+                    {{ calendar }}
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src={% static "static/museum/js/calendar.js" %}></script>
 {% endblock %}

@@ -1,0 +1,185 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.d-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.d-table th {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.d-tr {
+    display: table-row;
+}
+
+.d-td {
+    display: table-cell;
+    text-align: center;
+    border: none;
+
+    vertical-align: middle;
+}
+
+.d-td-header {
+    display: table-cell;
+    text-align: center;
+    border: none;
+
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.calendarDayNumber {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: 0.2em;
+
+    color: white;
+}
+
+
+.event-calendar-text {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: medium;
+    line-height: 16px;
+    text-align: justify;
+
+    color: #EFC987;
+}
+
+
+.text-name-day {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.5em;
+
+    color: #000000;
+}
+
+.text-name-day-red {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.5em;
+
+    color: #a31515;
+}
+
+.background-calendar {
+    background: rgb(83, 83, 83);
+    background: linear-gradient(90deg, rgba(83, 83, 83, 1) 0%, rgba(107, 107, 107, 1) 50%, rgba(83, 83, 83, 1) 100%);
+}
+
+.calendar-month-name {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 30px;
+    letter-spacing: 0.29em;
+
+    background: -webkit-linear-gradient(#eeeeee, #EFC987);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calendar-month-name-white {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 30px;
+    letter-spacing: 0.29em;
+
+    color: white;
+}
+
+
+.btnEvent {
+    border-color: #F7E4C3;
+
+    border-width: 3px;
+    box-shadow: none !important;
+    border-radius: 10px;
+}
+
+.iframe {
+
+    color: #EFC987;
+}
+
+.currentDay {
+    background-color: #EFC987;
+    border-radius: 10px;
+
+}
+
+.buttonHoverCal:hover, .buttonHoverCal:focus, .buttonHoverCal:active {
+    background-color: #EFC987;
+    transition: 0.5s;
+    box-shadow: none !important;
+    border-radius: 10px;
+}
+
+
+.line-under-name-day {
+    align-items: center;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #EFC987;
+    color: #EFC987;
+}
+
+
+.line-under-name-day-red {
+    align-items: center;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #a31515;
+    color: #a31515;
+}
+
+.text-button-calendar {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.05em;
+    color: #000000;
+}
+
+.jsEvent {
+
+}
+
+.none-marker {
+    list-style-type: none;
+    color: white;
+    font-size: medium;
+}

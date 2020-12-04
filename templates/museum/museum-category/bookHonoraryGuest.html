@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Книга почётных гостей{% endblock %}
+
+{% block content %}
+    <div class="container-fluid ">
+        <div class="marginLineNew d-flex justify-content-center align-items-center ">
+            <div class="museumWordBlack">
+                Почётные Гости
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center ">
+            {% for el in guest %}
+                <div class="col-6 d-flex justify-content-center pl-4">
+                    <div class="col">
+                        <div class="row d-flex justify-content-center py-3">
+                            {{ el.titleFIO }}
+                        </div>
+                        <div class="row">
+                            <img class="d-block text-center w-100 h-100"
+                                 src='{{ el.imageGuest.url }}'
+                                 alt="Image">
+                        </div>
+                        <div class="row">
+                            <img class="d-block text-center w-100 h-100"
+                                 src='{{ el.descriptionGuest.url }}'
+                                 alt="Image">
+                        </div>
+                        <div class="row">
+                            {{ el.dateReview|date:"d-M-Y" }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
