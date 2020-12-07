@@ -1,0 +1,66 @@
+.book-word {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #1e5eca;
+}
+
+.book-backgroundLine {
+    background-color: #1e5eca;
+    height: 2vh;
+}
+
+.mini-line-book {
+
+    height: 2px;
+    border-radius: 2px;
+    background-color: #1e5eca;
+    color: #1e5eca;
+}
+
+.text-book{
+}
+
+
+.text-book-1{
+    font-family: "Rage Italic", sans-serif;
+    font-size: 1.2em;
+  color: #1e5eca;
+}
+
+.dateReview{
+      font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+
+    color: #1e5eca;
+}
+
+.book-size{
+    height: 85%;
+    width: 85%;
+}
+
+.buttonHover-book:hover, .buttonHover-book:focus, .buttonHover-book:active {
+    background-color: #1e5eca;
+    transition: 0.75s;
+    box-shadow: none !important;
+}
+
+@media (max-width: 625px) {
+   .text-book{
+       font-size: 12px;
+   }
+}
+
+
+@media (max-width: 768px) {
+    .next-row{
+        min-width: 100%;
+    }
+}

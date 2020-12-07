@@ -55,6 +55,7 @@ class NewManager(models.Manager):
 class Guest(models.Model):
     titleFIO = models.TextField("Имя Фамилия Отчество почётного гостя")
     imageGuest = models.ImageField("Фото почётного гостя", upload_to='media/%Y/%m/%d/')
+    descriptionText = RichTextField("Отзыв Гостя", default=" ")
     descriptionGuest = models.ImageField("Отзыв гостя", upload_to='media/%Y/%m/%d/')
     dateReview = models.DateField("Дата Отзыва")
 

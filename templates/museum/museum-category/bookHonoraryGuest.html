@@ -4,37 +4,92 @@
 {% block title %}Книга почётных гостей{% endblock %}
 
 {% block content %}
-    <div class="container-fluid ">
-        <div class="marginLineNew d-flex justify-content-center align-items-center ">
-            <div class="museumWordBlack">
-                Почётные Гости
+    <div class="container-fluid py-4">
+        <nav class="navbar navbar-white bg-white header">
+            <div class="navbar-brand ml-4">
+                <div class="book-word">
+                    Почётные гости Музея
+                </div>
             </div>
-        </div>
+            <div class="btn-lg  h-100 text-center">
+                <a class="btn-lg headerMainWord buttonHover-book h-100" href="{% url 'guests' %}">
+                    Список Почётных Гостей
+                </a>
+            </div>
+        </nav>
     </div>
     <div class="container-fluid">
-        <div class="row d-flex justify-content-center ">
+        <div class="book-backgroundLine"></div>
+    </div>
+    <div class="container-fluid d-flex justify-content-end pr-5">
+        <div class="row w-100 d-flex justify-content-between">
             {% for el in guest %}
-                <div class="col-6 d-flex justify-content-center pl-4">
-                    <div class="col">
-                        <div class="row d-flex justify-content-center py-3">
-                            {{ el.titleFIO }}
+                <div class="row pl-4 w-100">
+                    <div class="col-6 d-flex justify-content-center next-row">
+                        <img class="d-block pt-3 text-center book-size"
+                             src='{{ el.descriptionGuest.url }}'
+                             alt="Image">
+                    </div>
+
+                    <div class="col-6 next-row">
+                        <div class="row pt-4">
+                            <div class="col d-flex justify-content-start">
+                                <img class="d-block w-25" src="{% static 'static/museum/img/border-book/left-up.png' %}"
+                                     alt="1">
+                            </div>
+                            <div class="col d-flex justify-content-end">
+                                <img class="d-block w-25"
+                                     src="{% static 'static/museum/img/border-book/right-up.png' %}"
+                                     alt="2">
+                            </div>
                         </div>
-                        <div class="row">
-                            <img class="d-block text-center w-100 h-100"
+                        <div class="row w-100 bg-white  d-flex justify-content-center ml-2">
+                            <img class="d-block pt-3 text-center w-75 h-75"
                                  src='{{ el.imageGuest.url }}'
                                  alt="Image">
                         </div>
-                        <div class="row">
-                            <img class="d-block text-center w-100 h-100"
-                                 src='{{ el.descriptionGuest.url }}'
-                                 alt="Image">
+                        <div class="row d-flex justify-content-center ml-2 py-3">
+                            {{ el.titleFIO }}
                         </div>
-                        <div class="row">
-                            {{ el.dateReview|date:"d-M-Y" }}
+                        <div class="d-flex justify-content-center ml-3">
+                            <div class="mini-line-book w-75"></div>
+                        </div>
+                        <div class="text-center pt-3 museumWordBlack3 ml-3 text-book-1">
+                            ФАМИЛИЯ,ИМЯ,ОТЧЕСТВО
+                        </div>
+                        <div class="row bg-white d-flex justify-content-center ml-3 pt-4">
+                            <div class="w-75 text-justify text-book-1"> {{ el.descriptionText|safe }}</div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                <div class="row d-flex justify-content-center dateReview">{{ el.dateReview|date:"d.m.Y" }}</div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="row mini-line-book w-75"></div>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+
+
+                        </div>
+                        <div class="row pb-4">
+                            <div class="col d-flex justify-content-start">
+                                <img class="d-block w-25"
+                                     src="{% static 'static/museum/img/border-book/left-down.png' %}"
+                                     alt="1">
+                            </div>
+                            <div class="col d-flex justify-content-end">
+                                <img class="d-block w-25"
+                                     src="{% static 'static/museum/img/border-book/right-down.png' %}"
+                                     alt="2">
+                            </div>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
+    </div>
+    <div class="container-fluid">
+        {% include 'include/paginationbook.html' %}
+
     </div>
 {% endblock %}

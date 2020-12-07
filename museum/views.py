@@ -4,24 +4,10 @@ from .forms import AddReviewForm, AddApplicationForm, EventForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.paginator import Paginator
 from django.views import generic
-from django.urls import reverse
 from django.utils.safestring import mark_safe
 import calendar
 from .models import *
 from .utils import Calendar
-
-
-def index(request):
-    graduates = New.objects.Graduates()
-    excursions = New.objects.Excursions()
-    maecenases = New.objects.Maecenases()
-    veterans = New.objects.Veterans()
-    image = NewImage.objects.all()
-    count = [0, 1, 2, 3]
-    return render(request, 'museum/index.html', {
-        'excursions': excursions, 'graduates': graduates,
-        'maecenases': maecenases, 'veterans': veterans, 'image': image, 'count': count
-    })
 
 
 def about(request):
@@ -35,6 +21,16 @@ def afisha(request):
 def paginationPage(request, item, url):
     page = request.GET.get('page', 1)
     limit = 2
+    paginator = Paginator(item, limit)
+    paginator.baseurl = url + '?page='
+    page = paginator.page(page)
+    pl = [page, paginator]
+    return pl
+
+
+def paginationPageBook(request, item, url):
+    page = request.GET.get('page', 1)
+    limit = 1
     paginator = Paginator(item, limit)
     paginator.baseurl = url + '?page='
     page = paginator.page(page)
@@ -59,10 +55,13 @@ def news(request):
 
 def guests(request):
     guest = Guest.objects.all().order_by('-dateReview')
-
+    pl = paginationPageBook(request, guest, '/guests/')
+    page, paginator = pl[0], pl[1]
     return render(request, 'museum/museum-category/bookHonoraryGuest.html',
                   {
-                      'guest': guest
+                      'guest': page.object_list,
+                      'paginator': paginator,
+                      'page': page
                   })
 
 
@@ -145,16 +144,28 @@ def museumNal(request):
 
 class CalendarView(generic.ListView):
     model = Event
-    template_name = 'museum/museum-category/calendar.html'
+    template_name = 'museum/index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         d = get_date(self.request.GET.get('month', None))
         cal = Calendar(d.year, d.month)
         html_cal = cal.formatmonth(withyear=True)
+        graduates = New.objects.Graduates()
+        excursions = New.objects.Excursions()
+        maecenases = New.objects.Maecenases()
+        veterans = New.objects.Veterans()
+        image = NewImage.objects.all()
+        count = [0, 1, 2, 3]
         context['calendar'] = mark_safe(html_cal)
         context['prev_month'] = prev_month(d)
         context['next_month'] = next_month(d)
+        context['excursions'] = excursions
+        context['maecenases'] = maecenases
+        context['graduates'] = graduates
+        context['veterans'] = veterans
+        context['image'] = image
+        context['count'] = count
         return context
 
 
@@ -190,6 +201,6 @@ def event(request, event_id=None):
     form = EventForm(request.POST or None, instance=instance)
     if request.POST and form.is_valid():
         form.save()
-        return HttpResponseRedirect(reverse('calendar'))
+        return HttpResponseRedirect(reverse('main'))
     return render(request, 'museum/museum-category/event.html', {'form': form})
 

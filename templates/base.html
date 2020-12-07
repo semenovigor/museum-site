@@ -11,13 +11,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="http://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Merienda+One" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/indexAndBase.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/all.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/reviews.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/news.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/pagination.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/paginationbook.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/calendar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/museum/css/book.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -71,7 +75,7 @@
                 <a href=""><i class="far fa-play-circle">Виртуальный музей</i></a>
             </div>
 
-             <div class="text-center pt-2">
+            <div class="text-center pt-2">
                 <a href="{% url 'guests' %}"><i class="far fa-play-circle">Почётны гости Музея</i></a>
             </div>
 
@@ -125,7 +129,7 @@
                         <ul>
                             <li class="text-footer"><a href="">Краткая история музея</a></li>
                             <li class="text-footer"><a href="">Контакты</a></li>
-                            <li class="text-footer"><a href="">Старая версия сайт</a></li>
+                            <li class="text-footer"><a href="https://museum.grsu.by/">Старая версия сайт</a></li>
                         </ul>
                     </div>
                     <div class="w-100"></div>
@@ -150,7 +154,7 @@
             </div>
         </div>
         <div class="backgroundLine-2"></div>
-        <div class="footerSizeGrey d-flex justify-content-around align-content-center">
+        <div class="footerSizeGrey row d-flex align-content-center justify-content-around h-100">
             <div class="navbar-brand align-self-center w-25 my-5 ">
                 <div class="museumWord"><b class="museumWord-White text-decoration-none"> Музей </b> <b
                         class="museumWordBlack">истории
@@ -158,13 +162,12 @@
                 <div class="w-100 museumWordBlack2">Гродненского государственного</div>
                 <div class="w-100 museumWordBlack2"> университета им. Янки Купалы</div>
             </div>
-
             <div class="d-flex align-self-end w-25">
                 <a class="btn-lg btn-footer text-decoration-none" href="#top">
                     <i class="fas fa-arrow-alt-circle-up"></i>Вверх
                 </a>
             </div>
-            <div class="row d-flex justify-content-around align-content-center w-25 my-5">
+            <div class="d-flex justify-content-around align-content-center w-25 my-5">
                 <div class="  circle-on-footer"><img class="imgFooter"
                                                      src="{% static 'static/museum/img/GRSU-img-1.png' %}" alt="grsu">
                 </div>

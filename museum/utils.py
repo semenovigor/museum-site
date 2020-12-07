@@ -11,9 +11,6 @@ class Calendar(HTMLCalendar):
         self.month = month
         super(Calendar, self).__init__()
 
-    # formats a day as a td
-    # filter events by day
-
     def formatday(self, day, events):
         events_per_day = events.filter(start_time__day=day)
         d = ''
@@ -24,7 +21,7 @@ class Calendar(HTMLCalendar):
 
         if day != 0:
             if day == datetime.now().day:
-                return f'<div class="col jsEvent">' \
+                return f'<div class="col jsEvent py-3">' \
                        f'<button class="btn calendarDayNumber ' \
                        f'buttonHoverCal w-100 currentDay' \
                        f' "data-toggle="collapse" data-target="#collapse_{day}" aria-expanded="true"' \
@@ -35,15 +32,15 @@ class Calendar(HTMLCalendar):
                        f'data-parent="#accordion"><ul class="event-calendar-text pt-4"> {d}' \
                        f'</ul></div></div> '
 
-            return f'<div class="col jsEvent">' \
-               f'<button class="btn calendarDayNumber ' \
-               f'buttonHoverCal w-100' \
-               f' "data-toggle="collapse" data-target="#collapse_{day}" aria-expanded="true"' \
-               f' aria-controls="collapse_{day}">' \
-               f'{day}</button>' \
-               f'' \
-               f' <div id="collapse_{day}" aria-labelledby="{day}" class="collapse"' \
-               f'data-parent="#accordion"><ul class="event-calendar-text pt-4"> {d}</ul>' \
+            return f'<div class="col jsEvent py-3">' \
+                   f'<button class="btn calendarDayNumber ' \
+                   f'buttonHoverCal w-100' \
+                   f' "data-toggle="collapse" data-target="#collapse_{day}" aria-expanded="true"' \
+                   f' aria-controls="collapse_{day}">' \
+                   f'{day}</button>' \
+                   f'' \
+                   f' <div id="collapse_{day}" aria-labelledby="{day}" class="collapse"' \
+                   f'data-parent="#accordion"><ul class="event-calendar-text pt-4"> {d}</ul>' \
                    f'</div></div>'
         return '<div class="col"></div>'
 
@@ -107,7 +104,7 @@ class Calendar(HTMLCalendar):
                f'<div class="col">' \
                f'<div class="col text-name-day text-center pb-3 ">{"Ср"}</div>' \
                f'<div class="d-flex justify-content-center">' \
-               f'<div class="w-50 line-under-name-day"></div></div></div>'\
+               f'<div class="w-50 line-under-name-day"></div></div></div>' \
                f'<div class="col">' \
                f'<div class="col text-name-day text-center pb-3 ">{"Чт"}</div>' \
                f'<div class="d-flex justify-content-center">' \

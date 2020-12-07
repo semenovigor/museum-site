@@ -144,7 +144,6 @@
             </div>
             <div class="w-25">
                 <div class="img-wrap d-flex justify-content-end px-5">
-
                     <img class="circlePhoto" src="{% static 'static/museum/img/меценаты.png' %}"
                          alt="экскурсии">
                     <div class="align-content-center text-center fontCategoryMuseum word-down-category">
@@ -179,7 +178,7 @@
         <div class="bg-white">
             <div class="accordion" id="accordion">
                 {% for el in count %}
-                    <div class="row justify-content-around container-fluid">
+                    <div class="row justify-content-between container-fluid">
                         {% for ex in excursions %}
                             {% if forloop.counter0 == el %}
                                 <div class="card-header text-center border-0 width-20" id="{{ ex.id }}">
@@ -189,10 +188,10 @@
                                             aria-expanded="true"
                                             aria-controls="collapse_{{ ex.id }}">
                                         <div class="row  align-items-center justify-content-end">
-                                            <div class="col-3">
-                                                <div class="row dateNew ">{{ ex.date|date:"d" }}</div>
-                                                <div class="row monthNew ">{{ ex.date|date:"M" }}</div>
-                                                <div class="row yearNew">{{ ex.date|date:"Y" }}</div>
+                                            <div class="col-6">
+                                                <div class="row dateNew d-flex justify-content-center">{{ ex.date|date:"d" }}</div>
+                                                <div class="row monthNew d-flex justify-content-center ">{{ ex.date|date:"M" }}</div>
+                                                <div class="row yearNew d-flex justify-content-center">{{ ex.date|date:"Y" }}</div>
                                             </div>
                                             <div class="col-6  textNearDateNew">{{ ex.title }}</div>
                                         </div>
@@ -209,10 +208,10 @@
                                             aria-expanded="true"
                                             aria-controls="collapse_{{ gr.id }}">
                                         <div class="row  align-items-center justify-content-end">
-                                            <div class="col-3">
-                                                <div class="row dateNew ">{{ gr.date|date:"d" }}</div>
-                                                <div class="row monthNew ">{{ gr.date|date:"M" }}</div>
-                                                <div class="row yearNew">{{ gr.date|date:"Y" }}</div>
+                                            <div class="col-6">
+                                                <div class="row dateNew d-flex justify-content-center">{{ gr.date|date:"d" }}</div>
+                                                <div class="row monthNew d-flex justify-content-center">{{ gr.date|date:"M" }}</div>
+                                                <div class="row yearNew d-flex justify-content-center">{{ gr.date|date:"Y" }}</div>
                                             </div>
                                             <div class="col-6  textNearDateNew">{{ gr.title }}</div>
                                         </div>
@@ -229,10 +228,10 @@
                                             aria-expanded="true"
                                             aria-controls="collapse_{{ ma.id }}">
                                         <div class="row  align-items-center justify-content-end">
-                                            <div class="col-3">
-                                                <div class="row dateNew ">{{ ma.date|date:"d" }}</div>
-                                                <div class="row monthNew ">{{ ma.date|date:"M" }}</div>
-                                                <div class="row yearNew">{{ ma.date|date:"Y" }}</div>
+                                            <div class="col-6">
+                                                <div class="row dateNew d-flex justify-content-center">{{ ma.date|date:"d" }}</div>
+                                                <div class="row monthNew d-flex justify-content-center">{{ ma.date|date:"M" }}</div>
+                                                <div class="row yearNew d-flex justify-content-center">{{ ma.date|date:"Y" }}</div>
                                             </div>
                                             <div class="col-6  textNearDateNew">{{ ma.title }}</div>
                                         </div>
@@ -249,10 +248,10 @@
                                             aria-expanded="true"
                                             aria-controls="collapse_{{ ve.id }}">
                                         <div class="row  align-items-center justify-content-end">
-                                            <div class="col-3">
-                                                <div class="row dateNew ">{{ ve.date|date:"d" }}</div>
-                                                <div class="row monthNew ">{{ ve.date|date:"M" }}</div>
-                                                <div class="row yearNew">{{ ve.date|date:"Y" }}</div>
+                                            <div class="col-6">
+                                                <div class="row dateNew d-flex justify-content-center">{{ ve.date|date:"d" }}</div>
+                                                <div class="row monthNew d-flex justify-content-center">{{ ve.date|date:"M" }}</div>
+                                                <div class="row yearNew d-flex justify-content-center">{{ ve.date|date:"Y" }}</div>
                                             </div>
                                             <div class="col-6  textNearDateNew">{{ ve.title }}</div>
                                         </div>
@@ -266,7 +265,6 @@
                             <div id="collapse_{{ ex.id }}" aria-labelledby="{{ ex.id }}" class="collapse"
                                  data-parent="#accordion">
                                 <div class="card-body  backgroundNew ">
-
                                     <div class="card-body d-flex justify-content-around">
                                         <div class="col-6 carousel slide d-block" id="_i{{ ex.id }}"
                                              data-ride="carousel">
@@ -508,8 +506,7 @@
             </div>
         </div>
     </section>
-
-    <div class="container-fluid ">
+    <div class="container-fluid">
         <div class="BlackLine d-flex justify-content-right align-items-center pl-5">
             <div class="moreNew">
                 <a class="textNearMuseumPhotoС" href="{% url 'news' %}">Больше новостей <i
@@ -517,6 +514,24 @@
             </div>
         </div>
     </div>
+    <section class="container-fluid" id="calendar">
+        <div class="background-calendar">
+            <div class="col">
+                <div class="row">
+                    <div class="col d-flex justify-content-start pl-5 pt-4">
+                        <a class="btn  text-button-calendar"
+                           href="{% url 'main' %}?{{ prev_month }}#calendar"><h1 class="iframe"><i class="fas fa-arrow-circle-left"></i></h1></a>
+                        <a class="btn  text-button-calendar ml-4"
+                           href="{% url 'main' %}?{{ next_month }}#calendar"><h1 class="iframe"><i class="fas fa-arrow-circle-right"></i></h1></a>
+                    </div>
+                </div>
+                <div>
+                    {{ calendar }}
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src={% static "static/museum/js/calendar.js" %}></script>
     <div class="container-fluid">
         <div class="backgroundLine-2"></div>
     </div>

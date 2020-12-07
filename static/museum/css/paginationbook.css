@@ -1,3 +1,7 @@
+.background-book-pagination{
+    background-color: #337ab7;
+}
+
 
 .pagination {
     width: auto;
@@ -26,7 +30,7 @@
     transition: all .2s ease-in-out;
     font-family: Roboto, sans-serif;
     font-size: 16px;
-    color: #6B6B6B
+    color: white;
 }
 
 @media only screen and (max-width: 767px) {
@@ -79,9 +83,9 @@
 
 .pagination__item.active .pagination__link {
     color: #F7E4C3;
-    background: #C4C4C4
+    background: darkblue;
 }
 
 .pagination__item--dots .pagination__link {
-    color: #6B6B6B
+    color: white;
 }
