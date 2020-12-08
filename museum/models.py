@@ -3,11 +3,23 @@ from ckeditor.fields import RichTextField
 from django.urls import reverse
 
 
+class Purpose(models.Model):
+    namePurpose = models.CharField("Название Цели", max_length=100)
+
+    def __str__(self):
+        return self.namePurpose
+
+
 class Event(models.Model):
-    title = models.CharField(max_length=200)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    title = models.CharField("Название организации", max_length=200, default="")
+    start_time = models.DateTimeField("Начало экскурсии")
+    end_time = models.DateTimeField("Конец экскурсии")
+    userscount = models.IntegerField("Количество участников")
+    purpose = models.ForeignKey(Purpose, null=True, on_delete=models.SET_NULL)
     description = models.TextField(default="somthing")
+    FIO = models.TextField("ФИО ответственного", default="")
+    phone = models.IntegerField("контактный телефон", default="")
+    mail = models.EmailField("Электронная почта", default="")
 
     def __str__(self):
         return self.title

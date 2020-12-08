@@ -9,6 +9,29 @@
     color: #F7E4C3;
 }
 
+.text-reviews-big-1 {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.125em;
+    line-height: 1.25em;
+    letter-spacing: 0.2em;
+
+    color: black;
+}
+
+.text-reviews-big-2 {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 2em;
+    line-height: 1.25em;
+    letter-spacing: 0.2em;
+
+    color: #EFC987;
+}
+
+
 .text-reviews-small {
     font-family: Roboto, sans-serif;
     font-style: normal;
@@ -20,6 +43,47 @@
     color: #F7E4C3;
 }
 
-.background-review{
+.background-review {
     background: #6B6B6B;
+}
+
+.mini-line-review {
+
+    height: 5px;
+    border-radius: 5px;
+    background-color: #EFC987;
+    color: #EFC987;
+}
+
+.mini-line-review-black {
+
+    height: 5px;
+    border-radius: 5px;
+    background-color: black;
+    color: black;
+}
+
+
+.bg-review {
+
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #F7E4C3;
+}
+
+.pole-vvoda {
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.pole-vvoda-text {
+    background: #FFFFFF;
+    border-radius: 10px;
+    height: 15vh;
+}
+
+.btn-submit {
+    background: #F7E4C3;
+    border-radius: 10px;
+
 }

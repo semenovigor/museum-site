@@ -38,6 +38,16 @@ def paginationPageBook(request, item, url):
     return pl
 
 
+def paginationPageReview(request, item, url):
+    page = request.GET.get('page', 1)
+    limit = 4
+    paginator = Paginator(item, limit)
+    paginator.baseurl = url + '?page='
+    page = paginator.page(page)
+    pl = [page, paginator]
+    return pl
+
+
 def news(request):
     new = New.objects.NewsSortByDate()
     image = NewImage.objects.all()
@@ -57,7 +67,7 @@ def guests(request):
     guest = Guest.objects.all().order_by('-dateReview')
     pl = paginationPageBook(request, guest, '/guests/')
     page, paginator = pl[0], pl[1]
-    return render(request, 'museum/museum-category/bookHonoraryGuest.html',
+    return render(request, 'museum/museum-category/book/bookHonoraryGuest.html',
                   {
                       'guest': page.object_list,
                       'paginator': paginator,
@@ -67,6 +77,8 @@ def guests(request):
 
 def reviews(request):
     reviews = Review.objects.all().order_by('-date_review')
+    pl = paginationPageReview(request, reviews, '/reviews/')
+    page, paginator = pl[0], pl[1]
     if request.method == "POST":
         form = AddReviewForm(request.POST)
         if form.is_valid():
@@ -74,7 +86,10 @@ def reviews(request):
             return HttpResponseRedirect('/reviews/')
     else:
         form = AddReviewForm()
-    return render(request, 'museum/reviews.html', {'form': form, 'reviews': reviews})
+    return render(request, 'museum/reviews.html', {'form': form,
+                                                   'reviews': page.object_list,
+                                                   'paginator': paginator,
+                                                   'page': page})
 
 
 def exursion(request):
@@ -203,4 +218,3 @@ def event(request, event_id=None):
         form.save()
         return HttpResponseRedirect(reverse('main'))
     return render(request, 'museum/museum-category/event.html', {'form': form})
-

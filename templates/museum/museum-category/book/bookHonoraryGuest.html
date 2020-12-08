@@ -7,8 +7,7 @@
     <div class="container-fluid py-4">
         <nav class="navbar navbar-white bg-white header">
             <div class="navbar-brand ml-4">
-                <div class="book-word">
-                    Почётные гости Музея
+                <div class="book-word"><a class="book-word" href="{% url 'guests' %}">Почётные гости Музея</a>
                 </div>
             </div>
             <div class="btn-lg  h-100 text-center">
@@ -19,10 +18,10 @@
         </nav>
     </div>
     <div class="container-fluid">
-        <div class="book-backgroundLine"></div>
+        <div class="book-backgroundLine " id="guest"></div>
     </div>
     <div class="container-fluid d-flex justify-content-end pr-5">
-        <div class="row w-100 d-flex justify-content-between">
+        <div class="row w-100 d-flex justify-content-between shadow my-2" >
             {% for el in guest %}
                 <div class="row pl-4 w-100">
                     <div class="col-6 d-flex justify-content-center next-row">

@@ -15,4 +15,5 @@ urlpatterns = [
     path('event/new/', views.event, name='event_new'),
     re_path(r'^event/edit/(?P<event_id>\d+)/$', views.event, name='event_edit'),
     path('guests/', views.guests, name='guests'),
+
 ]
